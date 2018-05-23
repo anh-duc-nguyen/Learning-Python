@@ -49,10 +49,10 @@ class Player(object):
 			self.game.make_guess(self.guess)
 			return  self.game.check_ans(self.guess)
 		else:
-			tmp = self.board[:]
-			tmp.remove(self.guess)
-			guess = random.choice(tmp)
 			self.game.make_guess(self.guess)
+			tmp = self.game.get_board()[:]
+			tmp.remove(self.guess)
+			self.guess = random.choice(tmp)
 			return self.game.check_ans(self.guess)
 
 def test():
