@@ -21,31 +21,44 @@ class View:
 		
 		Label(self.frame, text = "simple Calculator").pack()
 
-		addButton = Button(self.frame, text="add")
-		addButton.bind(self.pressSum)
-		addButton.pack(side=LEFT, fill = Y)
+		self.addButton = Button(self.frame, text="*")
+		# self.addButton.bind(self.pressAdd)
+		self.addButton.pack(side=LEFT, fill = X)
 
-		subButton = Button(self.frame, text="sub")
-		subButton.bind(self.pressSub)
-		subButton.pack(side=LEFT, fill = Y)
-		mulButton = Button(self.frame, text="mul")
-		mulButton.bind(self.pressMul)
-		mulButton.pack(side=LEFT, fill = Y)
-		divButton = Button(self.frame, text="div")
-		divButton.bind(self.pressDiv)
-		divButton.pack(side=LEFT, fill = Y)
+		self.subButton = Button(self.frame, text="-")
+		# self.subButton.bind(self.pressSub)
+		self.subButton.pack(side=LEFT, fill = X)
+		self.mulButton = Button(self.frame, text="*")
+		# self.mulButton.bind(self.pressMul)
+		self.mulButton.pack(side=LEFT, fill = X)
+		self.divButton = Button(self.frame, text="/")
+		# self.divButton.bind(self.pressDiv)
+		self.divButton.pack(side=LEFT, fill = X)
+		self.clrButton = Button(self.frame, text="CLEAR")
+		self.clrButton.pack(side=LEFT, fill = X)
 
+	# def getFirst(self):
+	# 	print self.ansEntry.get()
 
-	
-	def pressSum(self):
-		pass
-	def pressSub(self):
-		pass
-	def pressMul(self):
-		pass
-	def pressDiv(self):
-		pass
+	# def pressAdd(self):
+	# 	pass
+	# def pressSub(self):
+	# 	pass
+	# def pressMul(self):
+	# 	pass
+	# def pressDiv(self):
+	# 	pass
 
+	def getFirst(self):
+		return int (self.firstEntry.get())
+
+	def getSecond(self):
+		return int (self.secondEntry.get())
+
+	def setAns(self,ans):
+		self.ansEntry.delete(0,END)
+		self.ansEntry.insert(0,ans)
+		
 	def build(self):
 		self.frame.pack()
 		self.root.mainloop()
