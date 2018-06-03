@@ -41,7 +41,7 @@ class Control:
 		self.theView.setAns(ans)
 
 	def pressClr(self,event):
-		pass
+		self.theView.setAns(0)
 
 
 if __name__ == '__main__':
