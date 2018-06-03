@@ -1,6 +1,7 @@
 import unittest
 from model import *
 import random
+
 class ModelTestUnit(unittest.TestCase):
 	def setUp(self):
 		self.the_model = Model()

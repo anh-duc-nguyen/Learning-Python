@@ -43,7 +43,6 @@ class Control:
 	def pressClr(self,event):
 		self.theView.setAns(0)
 
-
 if __name__ == '__main__':
 	theView = View()
 	theModel = Model()

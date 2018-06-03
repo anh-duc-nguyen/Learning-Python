@@ -1,6 +1,5 @@
 from Tkinter import *
 
-
 class View:
 	def __init__(self):
 		self.first = 0
