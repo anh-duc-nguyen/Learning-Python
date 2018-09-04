@@ -1,4 +1,4 @@
-from switch import *
+from badSwitch import *
 
 def f1(n):
 	while switch(n):
