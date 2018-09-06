@@ -10,7 +10,7 @@ class Gaia:
         for i in range(H):
             line = []
             for j in range(W):
-                p = Particle()
+                p = Particle(i,j)
                 line.append(p)
             self.board.append(line)
     def show(self):
@@ -21,7 +21,9 @@ class Gaia:
             print(line)
 
 class Particle:
-    def __init__(self):
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
         self.state = 0
     def toString(self):
         return str(self.state)
