@@ -1,15 +1,21 @@
 from life import *
 import sys
 
+inn = sys.stdin
+err = sys.stderr
+out = sys.stdout
+
 def runTest(testCase):
     return{
-        "a": smokeTest,
+        "1": smokeTest,
         "2": testGaiaBoard,
         "3": testPartical
     }.get(testCase,smokeTest)()
 
 def smokeTest():
     print("---------SMOKE TEST--------")
+    earth = Gaia()
+    earth.show()
     pass 
 
 def testGaiaBoard():
@@ -22,7 +28,7 @@ def testPartical():
 
 
 if __name__ == "__main__":
-    testCase = sys.stdin.readline().strip('\n')
+    testCase = inn.readline().strip('\n')
     # testCase = str(testCase)
     # print (testCase)
     # testCase = int(testCase)
