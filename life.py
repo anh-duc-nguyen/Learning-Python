@@ -3,9 +3,9 @@ Remake Conway's Game of Life
 '''
 # import numpy as np
 class Gaia:
-    def __init__(self):
-        self.H = 5
-        self.W = 5
+    def __init__(self,H,W):
+        self.H = H
+        self.W = W
         self.curr =[]
         self.clearNext()
         for i in range(self.H):
@@ -41,7 +41,7 @@ class Gaia:
         for n in neighbors:
             if n[0] in range(self.H) and n[1] in range(self.W):
                 hp += self.curr[n[0]][n[1]].getState()
-        if hp in range(2,4):
+        if hp in range(3,4):
             newParticle = Particle(aParticle.x,aParticle.y)
             newParticle.live()
             return newParticle
@@ -83,10 +83,3 @@ class Particle:
         self.state = 1
     def kill(self):
         self.state = 0
-
-def main():
-    earth = Gaia()
-    earth.show()
-
-if __name__ == '__main__':
-    main()
