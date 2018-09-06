@@ -20,6 +20,11 @@ def smokeTest():
 
 def testGaiaBoard():
     print("--------Test Gaia Board ----------")
+    earth = Gaia()
+    earth.show()
+    for i in earth.board:
+        for j in i:
+            print(j.neighbors())
     pass
 
 def testPartical():

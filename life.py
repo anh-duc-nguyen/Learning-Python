@@ -27,6 +27,19 @@ class Particle:
         self.state = 0
     def toString(self):
         return str(self.state)
+    def neighbors(self):
+        a0 = self.x
+        a1 = self.x - 1
+        a2 = self.x + 1
+        
+        b0 = self.y
+        b1 = self.y + 1
+        b2 = self.y - 1
+
+        return[
+            (a0,b0),(a0,b1),(a0,b2),
+            (a1,b0),(a1,b1),(a1,b2),
+            (a2,b0),(a2,b1),(a2,b2) ]
 
 def main():
     earth = Gaia()
