@@ -59,18 +59,6 @@ class Gaia:
                 newParticle = Particle(aParticle.x,aParticle.y)
                 newParticle.kill()
                 return newParticle
-        # if aParticle.death() and hp == 3:
-        #     newParticle = Particle(aParticle.x,aParticle.y)
-        #     newParticle.live()
-        #     return newParticle
-        # if hp in range(3,5):
-        #     newParticle = Particle(aParticle.x,aParticle.y)
-        #     newParticle.live()
-        #     return newParticle
-        # else:
-        #     newParticle = Particle(aParticle.x,aParticle.y)
-        #     newParticle.kill()
-        #     return newParticle
 
 
 class Particle:
