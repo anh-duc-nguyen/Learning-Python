@@ -41,14 +41,36 @@ class Gaia:
         for n in neighbors:
             if n[0] in range(self.H) and n[1] in range(self.W):
                 hp += self.curr[n[0]][n[1]].getState()
-        if hp in range(3,4):
-            newParticle = Particle(aParticle.x,aParticle.y)
-            newParticle.live()
-            return newParticle
+        if aParticle.alive():
+            if hp in range(3,5):
+                newParticle = Particle(aParticle.x,aParticle.y)
+                newParticle.live()
+                return newParticle
+            else:
+                newParticle = Particle(aParticle.x,aParticle.y)
+                newParticle.kill()
+                return newParticle
         else:
-            newParticle = Particle(aParticle.x,aParticle.y)
-            newParticle.kill()
-            return newParticle
+            if hp == 3:
+                newParticle = Particle(aParticle.x,aParticle.y)
+                newParticle.live()
+                return newParticle
+            else:
+                newParticle = Particle(aParticle.x,aParticle.y)
+                newParticle.kill()
+                return newParticle
+        # if aParticle.death() and hp == 3:
+        #     newParticle = Particle(aParticle.x,aParticle.y)
+        #     newParticle.live()
+        #     return newParticle
+        # if hp in range(3,5):
+        #     newParticle = Particle(aParticle.x,aParticle.y)
+        #     newParticle.live()
+        #     return newParticle
+        # else:
+        #     newParticle = Particle(aParticle.x,aParticle.y)
+        #     newParticle.kill()
+        #     return newParticle
 
 
 class Particle:
